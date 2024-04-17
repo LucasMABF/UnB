@@ -1,4 +1,4 @@
-// 1074 - Par ou  Ímpar
+// Lista 03 - 1074 - Par ou  Ímpar
 #include <stdio.h>
 
 int main(){

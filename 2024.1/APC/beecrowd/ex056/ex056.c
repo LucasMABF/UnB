@@ -1,4 +1,4 @@
-// 1146 - Sequências Crescentes
+// Lista 03 - 1146 - Sequências Crescentes
 #include <stdio.h>
 
 int main(){

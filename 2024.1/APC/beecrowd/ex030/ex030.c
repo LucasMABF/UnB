@@ -1,4 +1,4 @@
-// 2235 - Anando no Tempo
+// Lista 02 - 2235 - Anando no Tempo
 #include <stdio.h>
 
 int main(){

@@ -1,4 +1,4 @@
-// 1035 - Teste de Seleção 1
+// Lista 02 - 1035 - Teste de Seleção 1
 #include <stdio.h>
 
 int main(){

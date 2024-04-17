@@ -1,4 +1,4 @@
-// 1930 - Tomadas
+// Lista 01 - 1930 - Tomadas
 #include <stdio.h>
 
 int main(){

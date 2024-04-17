@@ -1,4 +1,4 @@
-// 2454 - Flíper
+// Lista 02 - 2454 - Flíper
 #include <stdio.h>
 
 int main(){

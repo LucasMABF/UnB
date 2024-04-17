@@ -1,4 +1,4 @@
-// 1064 - Positivos e Média
+// Lista 03 - 1064 - Positivos e Média
 #include <stdio.h>
 
 int main(){

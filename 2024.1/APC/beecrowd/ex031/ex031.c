@@ -1,4 +1,4 @@
-// 2417 - Campeonato
+// Lista 02 - 2417 - Campeonato
 #include <stdio.h>
 
 int main(){

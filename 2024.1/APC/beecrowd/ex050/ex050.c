@@ -1,4 +1,4 @@
-// 1117 - Validação de Nota
+// Lista 03 - 1117 - Validação de Nota
 #include <stdio.h>
 
 int main(){

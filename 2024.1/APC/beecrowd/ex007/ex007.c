@@ -1,4 +1,4 @@
-// 1011  - Esfera
+// Lista 01 - 1011  - Esfera
 #include <stdio.h>
 #include <math.h>
 

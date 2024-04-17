@@ -1,4 +1,4 @@
-// 1016 - Distância
+// Lista 01 - 1016 - Distância
 #include <stdio.h>
 
 int main(){

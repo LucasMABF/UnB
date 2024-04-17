@@ -1,4 +1,4 @@
-// 1157 - Divisores I
+// Lista 03 - 1157 - Divisores I
 #include <stdio.h>
 
 int main(){

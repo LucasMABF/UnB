@@ -1,4 +1,4 @@
-// 1075 - Resto 2
+// Lista 03 - 1075 - Resto 2
 #include <stdio.h>
 
 int main(){

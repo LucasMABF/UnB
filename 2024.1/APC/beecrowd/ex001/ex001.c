@@ -1,4 +1,4 @@
-// 1001 - Extremamente Básico
+// Lista 01 - 1001 - Extremamente Básico
 #include <stdio.h>
 
 int main(){

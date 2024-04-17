@@ -1,4 +1,4 @@
-// 1080 - Maior e Posição
+// Lista 03 - 1080 - Maior e Posição
 #include <stdio.h>
 
 int main(){

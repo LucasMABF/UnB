@@ -1,4 +1,4 @@
-// 2780 - Basquete de Robôs
+// Lista 02 - 2780 - Basquete de Robôs
 #include <stdio.h>
 
 int main(){

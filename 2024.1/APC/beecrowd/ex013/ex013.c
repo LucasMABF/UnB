@@ -1,4 +1,4 @@
-// 1017 - Gasto de Combustivel
+// Lista 01 - 1017 - Gasto de Combustivel
 #include <stdio.h>
 
 int main(){

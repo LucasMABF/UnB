@@ -1,4 +1,4 @@
-// 1046 - Tempo de Jogo
+// Lista 02 - 1046 - Tempo de Jogo
 #include <stdio.h>
 
 int main(){

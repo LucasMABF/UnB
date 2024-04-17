@@ -1,4 +1,4 @@
-// 1010 Cálculo Simples
+// Lista 01 - 1010 - Cálculo Simples
 #include <stdio.h>
 
 int main(){

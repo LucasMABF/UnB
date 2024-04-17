@@ -1,4 +1,4 @@
-// 1101 - Sequência de Números e Soma
+// Lista 03 - 1101 - Sequência de Números e Soma
 #include <stdio.h>
 
 int main(){

@@ -1,4 +1,4 @@
-// 1065 - Pares entre Cinco Números
+// Lista 03 - 1065 - Pares entre Cinco Números
 #include <stdio.h>
 
 int main(){

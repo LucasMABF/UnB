@@ -1,4 +1,4 @@
-// 1015 - Distância Entre Dois Pontos
+// Lista 01 - 1015 - Distância Entre Dois Pontos
 #include <stdio.h>
 #include <math.h>
 

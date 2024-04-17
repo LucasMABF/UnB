@@ -1,4 +1,4 @@
-// 1145 - Sequência Lógica 2
+// Lista 03 - 1145 - Sequência Lógica 2
 #include <stdio.h>
 
 int main(){

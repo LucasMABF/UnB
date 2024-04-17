@@ -1,4 +1,5 @@
-// 1142 - PUM#include <stdio.h>
+// Lista 03 - 1142 - PUM
+#include <stdio.h>
 
 int main(){
     int n;

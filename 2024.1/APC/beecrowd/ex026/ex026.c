@@ -1,4 +1,4 @@
-// 1049 - Animal
+// Lista 02 - 1049 - Animal
 #include <stdio.h>
 #include <string.h>
 

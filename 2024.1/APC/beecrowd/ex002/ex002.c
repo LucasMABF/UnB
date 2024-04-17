@@ -1,4 +1,4 @@
-// 1002 Área do Círculo
+// Lista 01 - 1002 - Área do Círculo
 #include <stdio.h>
 
 int main(){

@@ -1,4 +1,4 @@
-// 1099 - Soma de Ímpares Consecutivos II
+// Lista 03 - 1099 - Soma de Ímpares Consecutivos II
 #include <stdio.h>
 
 int main(){

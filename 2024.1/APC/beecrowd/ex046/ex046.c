@@ -1,4 +1,4 @@
-// 1095 - Sequencia IJ 1
+// Lista 03 - 1095 - Sequencia IJ 1
 #include <stdio.h>
 
 int main(){

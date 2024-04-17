@@ -1,4 +1,4 @@
-// 1060 - Números Positivos
+// Lista 03 - 1060 - Números Positivos
 #include <stdio.h>
 
 int main(){

@@ -1,4 +1,4 @@
-// 1087 - Dama
+// Lista 03 - 1087 - Dama
 #include <stdio.h>
 #include <stdlib.h>
 

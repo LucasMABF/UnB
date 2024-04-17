@@ -1,4 +1,4 @@
-// 1132 - Múltiplos de 13
+// Lista 03 - 1132 - Múltiplos de 13
 #include <stdio.h>
 
 int main(){

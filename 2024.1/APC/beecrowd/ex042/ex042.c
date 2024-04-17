@@ -1,4 +1,4 @@
-// 1079 - Médias Ponderadas
+// Lista 03 - 1079 - Médias Ponderadas
 #include <stdio.h>
 
 int main(){

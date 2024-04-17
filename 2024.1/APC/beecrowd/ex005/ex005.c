@@ -1,4 +1,4 @@
-// 1009 - Salário com Bônus
+// Lista 01 - 1009 - Salário com Bônus
 #include <stdio.h>
 
 int main(){

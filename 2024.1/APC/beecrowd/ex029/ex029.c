@@ -1,4 +1,4 @@
-// 1061 - Tempo de um Evento
+// Lista 02 - 1061 - Tempo de um Evento
 #include <stdio.h>
 
 int main(){

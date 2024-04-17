@@ -1,4 +1,4 @@
-// 1007 - Diferença
+// Lista 01 - 1007 - Diferença
 #include <stdio.h>
 
 int main(){

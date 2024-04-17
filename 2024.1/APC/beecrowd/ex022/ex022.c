@@ -1,4 +1,4 @@
-// 1043 - Triângulo
+// Lista 02 - 1043 - Triângulo
 #include <stdio.h>
 
 int main(){

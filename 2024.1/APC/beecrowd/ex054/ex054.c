@@ -1,4 +1,4 @@
-// 1144 - Sequência Lógica
+// Lista 03 - 1144 - Sequência Lógica
 #include <stdio.h>
 #include <math.h>
 

@@ -1,4 +1,4 @@
-// 1050 - DDD
+// Lista 02 - 1050 - DDD
 #include <stdio.h>
 
 int main(){

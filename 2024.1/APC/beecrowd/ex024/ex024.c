@@ -1,4 +1,4 @@
-// 1045 = Tipos de Triângulos
+// Lista 02 - 1045 - Tipos de Triângulos
 #include <stdio.h>
 #include <math.h>
 

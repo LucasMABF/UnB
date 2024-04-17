@@ -1,4 +1,4 @@
-// 1044 - Múltiplos
+// Lista 02 - 1044 - Múltiplos
 #include <stdio.h>
 
 int main(){

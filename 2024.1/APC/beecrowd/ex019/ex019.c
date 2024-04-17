@@ -1,4 +1,4 @@
-// 1038 - Lanche
+// Lista 02 - 1038 - Lanche
 #include <stdio.h>
 
 int main(){

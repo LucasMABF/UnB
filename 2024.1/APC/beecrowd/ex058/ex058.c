@@ -1,4 +1,4 @@
-// 1164 - Número Perfeito
+// Lista 03 - 1164 - Número Perfeito
 #include <stdio.h>
 
 int main(){

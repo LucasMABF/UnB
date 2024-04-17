@@ -1,4 +1,4 @@
-// 3055 - Nota Esquecida
+// Lista 01 - 3055 - Nota Esquecida
 #include <stdio.h>
 
 int main(){

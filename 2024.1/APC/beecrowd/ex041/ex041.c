@@ -1,4 +1,4 @@
-// 1078 - Tabuada
+// Lista 03 - 1078 - Tabuada
 #include <stdio.h>
 
 int main(){

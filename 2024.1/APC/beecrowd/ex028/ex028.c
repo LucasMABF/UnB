@@ -1,4 +1,4 @@
-// 1052 - Mês
+// Lista 02 - 1052 - Mês
 #include <stdio.h>
 
 int main(){

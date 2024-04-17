@@ -1,4 +1,4 @@
-// 1042 - Sort Simples
+// Lista 02 - 1042 - Sort Simples
 #include <stdio.h>
 
 int main(){

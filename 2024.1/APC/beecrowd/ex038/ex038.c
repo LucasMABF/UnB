@@ -1,4 +1,4 @@
-// 1073 - Quadrado de Pares
+// Lista 03 - 1073 - Quadrado de Pares
 #include <stdio.h>
 #include <math.h>
 

@@ -1,4 +1,4 @@
-// 1066 - Pares, Ímpares, Positivos e Negativos
+// Lista 03 - 1066 - Pares, Ímpares, Positivos e Negativos
 #include <stdio.h>
 
 int main(){

@@ -1,4 +1,4 @@
-// 1006 - Média 2
+// Lista 01 - 1006 - Média 2
 #include <stdio.h>
 
 int main(){
