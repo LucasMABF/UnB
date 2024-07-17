@@ -1,33 +1,49 @@
-// Lista 05 - 2715 - Dividindo os Trabalhos I
+// Lista 05 - 1973 - Jornada nas Estrelas
 #include <stdio.h>
-#include <stdlib.h>
 
 int main(){
     int n;
-    while(scanf("%d", &n) != EOF){
-        int trabalhos[n];
-        long long int gugu = 0;
-        for(int i = 0; i < n; i++){
-            scanf("%d", &trabalhos[i]);
-            gugu += trabalhos[i];
-        }
+    scanf("%d", &n);
+    int estrelas[n];
 
-        long long int rangel = 0;
-        long long int dif;
-        long long int resposta = gugu - rangel;
-        for(int i = 0; i < n; i++){
-            dif = llabs(gugu - rangel);
-            if(dif < resposta){
-                resposta = dif;
-            }
-            rangel += trabalhos[i];
-            gugu -= trabalhos[i];
-
-        }
-
-        printf("%lld\n", resposta);
-
+    for(int i = 0; i < n; i++){
+        int x;
+        scanf("%d", &x);
+        estrelas[i] = x;
     }
+
+    int index = 0;
+    int atacadas[n];
+    for(int i = 0; i < n; i++){
+        atacadas[i] = 0;
+    }
+
+    while(1){
+        if(atacadas[index] == 0){
+            atacadas[index]++;
+        }
+
+        if(estrelas[index] % 2 == 0){
+            if(estrelas[index] > 0) estrelas[index]--;
+            index--;
+        }else{
+            if(estrelas[index] > 0) estrelas[index]--;
+            index++;
+        }
+        if(index < 0 || index >= n) break;
+    }
+
+    long long int sum = 0;
+    for(int i = 0; i < n; i++){
+        sum += estrelas[i];
+    }
+
+    int a = 0;
+    for(int i = 0; i < n; i++){
+        a += atacadas[i];
+    }
+
+    printf("%d %lld\n", a, sum);
 
     return 0;
 }

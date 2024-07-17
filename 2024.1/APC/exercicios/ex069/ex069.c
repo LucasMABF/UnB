@@ -1,18 +1,17 @@
-// Lista 05 - 1178 - Preenchimento de Vetor III
+// Lista 05 - 1172 - Preenchimento de Vetor I
 #include <stdio.h>
 
 int main(){
-    double x;
-    scanf("%lf", &x);
-    double n[100];
-    n[0] = x;
-    for(int i = 1; i < 100; i++){
-        n[i] = n[i - 1] / 2.0;
+    int vec[10];
+    int n;
+    scanf("%d", &n);
+    vec[0] = n;
+    for(int i = 1; i < 10; i++){
+        vec[i] = vec[i - 1] * 2;
     }
 
-    for(int i = 0; i < 100; i++){
-        printf("N[%d] = %.4lf\n", i, n[i]);
+    for(int i = 0; i < 10; i++){
+        printf("N[%d] = %d\n", i, vec[i]);
     }
-
     return 0;
 }

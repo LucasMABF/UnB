@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 int main(){
     FILE *output = fopen("README.md", "wb");
@@ -34,11 +35,21 @@ int main(){
 
         char linha[200]; // [ex000](ex000/ex000.c): [1001 - Hello World!](https://judge.beecrowd.com/pt/problems/view/1001)
         char lista1[] = {header[14], header[15], header[16], header[17], '\0'};
+        int digit = 1;
+        for(int i = 0; i < 4; i++){
+            if(! isdigit(lista1[i])){
+                digit = 0;
+            }
+        }
         int num_ex = atoi(lista1);
-        if(num_ex != 0){
+        if(digit){
             snprintf(linha, 200, "\n- [ex%03d](ex%03d/ex%03d.c): [%s](https://judge.beecrowd.com/pt/problems/view/%c%c%c%c)\n", ex, ex, ex, &header[14], header[14], header[15], header[16], header[17]);
         }else{
-            snprintf(linha, 200, "\n- [ex%03d](ex%03d/ex%03d.c): [%c](ex%03d/%c.pdf)\n", ex, ex, ex, header[14], ex, header[14]);
+            if(ex == 63 || ex == 64 || ex == 65){
+                snprintf(linha, 200, "\n- [ex%03d](ex%03d/ex%03d.c): [%c](ex036/funcoes_ponteiros.pdf)\n", ex, ex, ex, header[14]);
+            }else{
+                snprintf(linha, 200, "\n- [ex%03d](ex%03d/ex%03d.c): [%c](ex%03d/%c.pdf)\n", ex, ex, ex, header[14], ex, header[14]);
+            }
         }
 
         fputs(linha, output);

@@ -1,31 +1,59 @@
-// Lista 05 - 1176 - Fibonacci em Vetor
+// Lista 05 - 1171 - Frequência de Números
 #include <stdio.h>
-#include <stdlib.h>
+int add(int *vec, int x, int len){
+    for(int i = 0; i < len; i++){
+        if(vec[i] == x){
+            return i;
+        }
+    }
+    vec[len] = x;
+    return -1;
+}
 
-int calc_fib(unsigned long long int *fib, int x, int len){
-    for(int i = len; i < x + 1; i++){
-        fib[i] = fib[i - 1] + fib[i - 2];
+// sort both vectors by vec1
+void sort(int *vec1, int *vec2, int n){
+    int sorted = 0;
+    while(! sorted){
+        sorted = 1;
+        for(int i = 0; i < n - 1; i++){
+            if(vec1[i] > vec1[i + 1]){
+                sorted = 0;
+                int temp1 = vec1[i];
+                int temp2 = vec2[i];
+                vec1[i] = vec1[i + 1];
+                vec2[i] = vec2[i + 1];
+                vec1[i + 1] = temp1;
+                vec2[i + 1] = temp2;
+            }
+        }
     }
 
-    return x + 1;
 }
 
 int main(){
-    unsigned long long int *fib = malloc(2 * sizeof(unsigned long long int));
-    int len = 2;
-    fib[0] = 0;
-    fib[1] = 1;
-    int n;
-    scanf("%d", &n);
-    for(int i = 0; i < n; i++){
-        int x;
-        scanf("%d", &x);
-        if(x >= len){
-            fib = realloc(fib, (sizeof(unsigned long long int) * (x + 1)));
-            len = calc_fib(fib, x, len);
-        }
-        printf("Fib(%d) = %llu\n", x, fib[x]);
-    }
+   int n;
+   int len = 0;
+   scanf("%d", &n);
+   int numeros[n];
+   int aparece[n];
+   for(int i = 0; i < n; i++){
+       int x;
+       scanf("%d", &x);
+       int j = add(numeros, x, len);
+
+       if(j != -1){
+           aparece[j] += 1;
+       }else{
+           aparece[len] = 1;
+           len += 1;
+       }
+   }
+
+   sort(numeros, aparece, len);
+
+   for(int i = 0; i < len; i++){
+       printf("%d aparece %d vez(es)\n", numeros[i], aparece[i]);
+   }
 
     return 0;
 }

@@ -140,36 +140,42 @@
 
 - [ex062](ex062/ex062.c): [D](ex062/D.pdf)
 
+- [ex063](ex063/ex063.c): [4](ex036/funcoes_ponteiros.pdf)
+
+- [ex064](ex064/ex064.c): [5](ex036/funcoes_ponteiros.pdf)
+
+- [ex065](ex065/ex065.c): [6](ex036/funcoes_ponteiros.pdf)
+
 ### Lista 5
 
-- [ex063](ex063/ex063.c): [1129 - Leitura Ótica](https://judge.beecrowd.com/pt/problems/view/1129)
+- [ex066](ex066/ex066.c): [1129 - Leitura Ótica](https://judge.beecrowd.com/pt/problems/view/1129)
 
-- [ex064](ex064/ex064.c): [1171 - Frequência de Número](https://judge.beecrowd.com/pt/problems/view/1171)
+- [ex067](ex067/ex067.c): [1171 - Frequência de Números](https://judge.beecrowd.com/pt/problems/view/1171)
 
-- [ex065](ex065/ex065.c): [1172 - Substituição em Vetor ](https://judge.beecrowd.com/pt/problems/view/1172)
+- [ex068](ex068/ex068.c): [1172 - Substituição em Vetor I](https://judge.beecrowd.com/pt/problems/view/1172)
 
-- [ex066](ex066/ex066.c): [1172 - Preenchimento de Vetor ](https://judge.beecrowd.com/pt/problems/view/1172)
+- [ex069](ex069/ex069.c): [1172 - Preenchimento de Vetor I](https://judge.beecrowd.com/pt/problems/view/1172)
 
-- [ex067](ex067/ex067.c): [1176 - Fibonacci em Veto](https://judge.beecrowd.com/pt/problems/view/1176)
+- [ex070](ex070/ex070.c): [1176 - Fibonacci em Vetor](https://judge.beecrowd.com/pt/problems/view/1176)
 
-- [ex068](ex068/ex068.c): [1177 - Preenchimento de Vetor I](https://judge.beecrowd.com/pt/problems/view/1177)
+- [ex071](ex071/ex071.c): [1177 - Preenchimento de Vetor II](https://judge.beecrowd.com/pt/problems/view/1177)
 
-- [ex069](ex069/ex069.c): [1178 - Preenchimento de Vetor II](https://judge.beecrowd.com/pt/problems/view/1178)
+- [ex072](ex072/ex072.c): [1178 - Preenchimento de Vetor III](https://judge.beecrowd.com/pt/problems/view/1178)
 
-- [ex070](ex070/ex070.c): [1178 - Preenchimento de Vetor I](https://judge.beecrowd.com/pt/problems/view/1178)
+- [ex073](ex073/ex073.c): [1178 - Preenchimento de Vetor IV](https://judge.beecrowd.com/pt/problems/view/1178)
 
-- [ex071](ex071/ex071.c): [1318 - Bilhetes Falso](https://judge.beecrowd.com/pt/problems/view/1318)
+- [ex074](ex074/ex074.c): [1318 - Bilhetes Falsos](https://judge.beecrowd.com/pt/problems/view/1318)
 
-- [ex072](ex072/ex072.c): [1973 - Jornada nas Estrela](https://judge.beecrowd.com/pt/problems/view/1973)
+- [ex075](ex075/ex075.c): [1973 - Jornada nas Estrelas](https://judge.beecrowd.com/pt/problems/view/1973)
 
-- [ex073](ex073/ex073.c): [2386 - Telescópi](https://judge.beecrowd.com/pt/problems/view/2386)
+- [ex076](ex076/ex076.c): [2386 - Telescópio](https://judge.beecrowd.com/pt/problems/view/2386)
 
-- [ex074](ex074/ex074.c): [2465 - Passa Bolinh](https://judge.beecrowd.com/pt/problems/view/2465)
+- [ex077](ex077/ex077.c): [2465 - Passa Bolinha](https://judge.beecrowd.com/pt/problems/view/2465)
 
-- [ex075](ex075/ex075.c): [2715 - Dividindo os Trabalhos ](https://judge.beecrowd.com/pt/problems/view/2715)
+- [ex078](ex078/ex078.c): [2715 - Dividindo os Trabalhos I](https://judge.beecrowd.com/pt/problems/view/2715)
 
-- [ex076](ex076/ex076.c): [2779 -Álbum da Cop](https://judge.beecrowd.com/pt/problems/view/2779)
+- [ex079](ex079/ex079.c): [2779 -Álbum da Copa](https://judge.beecrowd.com/pt/problems/view/2779)
 
-- [ex077](ex077/ex077.c): [2782 - Escadinha](https://judge.beecrowd.com/pt/problems/view/2782)
+- [ex080](ex080/ex080.c): [2782 - Escadinha](https://judge.beecrowd.com/pt/problems/view/2782)
 
-- [ex078](ex078/ex078.c): [2783 - Figurinhas da Cop](https://judge.beecrowd.com/pt/problems/view/2783)
+- [ex081](ex081/ex081.c): [2783 - Figurinhas da Copa](https://judge.beecrowd.com/pt/problems/view/2783)

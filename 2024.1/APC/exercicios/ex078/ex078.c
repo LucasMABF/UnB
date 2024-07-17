@@ -1,30 +1,33 @@
-// Lista 05 - 2783 - Figurinhas da Copa
+// Lista 05 - 2715 - Dividindo os Trabalhos I
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(){
-    int _figurinhas, n_carimbadas, compradas;
-    scanf("%d %d %d", &_figurinhas, &n_carimbadas, &compradas);
-
-    int carimbadas[n_carimbadas];
-    for(int i = 0; i < n_carimbadas; i++){
-        int carimbada;
-        scanf("%d", &carimbada);
-        carimbadas[i] = carimbada;
-    }
-
-    int restantes = n_carimbadas;
-    for(int i = 0; i < compradas; i++){
-        int figurinha;
-        scanf("%d", &figurinha);
-        for(int j = 0; j < n_carimbadas; j++){
-            if(carimbadas[j] == figurinha){
-                carimbadas[j] = 0;
-                restantes--;
-            }
+    int n;
+    while(scanf("%d", &n) != EOF){
+        int trabalhos[n];
+        long long int gugu = 0;
+        for(int i = 0; i < n; i++){
+            scanf("%d", &trabalhos[i]);
+            gugu += trabalhos[i];
         }
-    }
 
-    printf("%d\n", restantes);
+        long long int rangel = 0;
+        long long int dif;
+        long long int resposta = gugu - rangel;
+        for(int i = 0; i < n; i++){
+            dif = llabs(gugu - rangel);
+            if(dif < resposta){
+                resposta = dif;
+            }
+            rangel += trabalhos[i];
+            gugu -= trabalhos[i];
+
+        }
+
+        printf("%lld\n", resposta);
+
+    }
 
     return 0;
 }

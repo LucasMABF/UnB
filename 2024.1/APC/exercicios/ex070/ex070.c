@@ -1,41 +1,30 @@
-// Lista 05 - 1178 - Preenchimento de Vetor IV
+// Lista 05 - 1176 - Fibonacci em Vetor
 #include <stdio.h>
+#include <stdlib.h>
+
+int calc_fib(unsigned long long int *fib, int x, int len){
+    for(int i = len; i < x + 1; i++){
+        fib[i] = fib[i - 1] + fib[i - 2];
+    }
+
+    return x + 1;
+}
 
 int main(){
-    int pares[5];
-    int index_pares = 0;
-    int impares[5];
-    int index_impares = 0;
-    for(int i = 0; i < 15; i++){
+    unsigned long long int *fib = malloc(2 * sizeof(unsigned long long int));
+    int len = 2;
+    fib[0] = 0;
+    fib[1] = 1;
+    int n;
+    scanf("%d", &n);
+    for(int i = 0; i < n; i++){
         int x;
         scanf("%d", &x);
-        if(x % 2 == 0){
-            if(index_pares == 5){
-                for(int j = 0; j < 5; j++){
-                    printf("par[%d] = %d\n", j, pares[j]);
-                }
-                index_pares = 0;
-            }
-            pares[index_pares] = x;
-            index_pares++;
-        }else{
-            if(index_impares == 5){
-                for(int j = 0; j < 5; j++){
-                    printf("impar[%d] = %d\n", j, impares[j]);
-                }
-                index_impares = 0;
-            }
-            impares[index_impares] = x;
-            index_impares++;
+        if(x >= len){
+            fib = realloc(fib, (sizeof(unsigned long long int) * (x + 1)));
+            len = calc_fib(fib, x, len);
         }
-    }
-
-    for(int i = 0; i < index_impares; i++){
-        printf("impar[%d] = %d\n", i, impares[i]);
-    }
-
-    for(int i = 0; i < index_pares; i++){
-        printf("par[%d] = %d\n", i, pares[i]);
+        printf("Fib(%d) = %llu\n", x, fib[x]);
     }
 
     return 0;

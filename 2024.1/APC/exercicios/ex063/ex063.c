@@ -1,39 +1,35 @@
-// Lista 05 - 1129 - Leitura Ótica
+// Lista 04 - 4 - Lista PDF Funções 2
 #include <stdio.h>
 
-int main(){
-    while(1){
-        int n;
-        char resposta;
-        scanf("%d", &n);
-        if(n == 0){
-            break;
-        }
-        for(int i = 0; i < n; i++){
-            int respostas[5];
-            scanf("%d %d %d %d %d", &respostas[0], &respostas[1], &respostas[2], &respostas[3], &respostas[4]);
-
-            resposta = '\0';
-            for(int j = 0; j < 5; j++){
-                if(resposta != '\0'){
-                    if(respostas[j] <= 127){
-                        resposta = '*';
-                    }
-                }else{
-                    if(respostas[j] <= 127){
-                        resposta = 65 + j;
-                    }
-                }
-            }
-
-            if(resposta == '\0'){
-                resposta = '*';
-            }
-            
-            printf("%c\n", resposta);
-        }
-
+int maior(int a, int b){
+    if(a > b){
+        return a;
+    }else{
+        return b;
     }
+}
+
+int menor(int a, int b){
+    if(a < b){
+        return a;
+    }else{
+        return b;
+    }
+}
+
+void maior_e_menor(int *a, int *b, int *c){
+    int maior_n = maior(*a, maior(*b, *c));
+    int menor_n = menor(*a, menor(*b, *c));
+    *a = maior_n;
+    *b = menor_n;
+}
+
+int main(){
+    int a, b, c;
+    scanf("%d %d %d", &a, &b, &c);
+    maior_e_menor(&a, &b, &c);
+    printf("maior: %d\n", a);
+    printf("menor: %d\n", b);
 
     return 0;
 }
