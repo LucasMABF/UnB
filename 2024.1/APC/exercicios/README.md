@@ -1,4 +1,4 @@
-# Exercícios e Provas APC
+# Exercícios de APC
 
 - Resoluções dos exercícios das listas passadas nas aulas de APC, do beecrowd e dos PDF passados em sala.
 
@@ -205,3 +205,25 @@
 - [ex092](ex092/ex092.c): [1551 - Frase Completa](https://judge.beecrowd.com/pt/problems/view/1551)
 
 - [ex093](ex093/ex093.c): [2253 - Validador de Senhas](https://judge.beecrowd.com/pt/problems/view/2253)
+
+### Lista 7
+
+- [ex094](ex094/ex094.c): [1181 - Linha na Matriz](https://judge.beecrowd.com/pt/problems/view/1181)
+
+- [ex095](ex095/ex095.c): [1182 - Coluna na Matriz](https://judge.beecrowd.com/pt/problems/view/1182)
+
+- [ex096](ex096/ex096.c): [1183 - Acima da Diagonal Principal](https://judge.beecrowd.com/pt/problems/view/1183)
+
+- [ex097](ex097/ex097.c): [1185 - Acima da Diagonal Secundaria](https://judge.beecrowd.com/pt/problems/view/1185)
+
+- [ex098](ex098/ex098.c): [1187 - Área Superior](https://judge.beecrowd.com/pt/problems/view/1187)
+
+- [ex099](ex099/ex099.c): [1478 - Matriz Quadrada II](https://judge.beecrowd.com/pt/problems/view/1478)
+
+- [ex100](ex100/ex100.c): [1534 - Matriz 123](https://judge.beecrowd.com/pt/problems/view/1534)
+
+- [ex101](ex101/ex101.c): [1618 - Colisão](https://judge.beecrowd.com/pt/problems/view/1618)
+
+- [ex102](ex102/ex102.c): [2520 - O Último Analógimôn](https://judge.beecrowd.com/pt/problems/view/2520)
+
+- [ex103](ex103/ex103.c): [2163 - O Despertar da Força](https://judge.beecrowd.com/pt/problems/view/2163)

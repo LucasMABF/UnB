@@ -7,7 +7,7 @@
 int main(){
     FILE *output = fopen("README.md", "wb");
 
-    char header[] = "# Exercícios e Provas APC\n\n- Resoluções dos exercícios das listas passadas nas aulas de APC, do beecrowd e dos PDF passados em sala.\n\n### Index\n";
+    char header[] = "# Exercícios de APC\n\n- Resoluções dos exercícios das listas passadas nas aulas de APC, do beecrowd e dos PDF passados em sala.\n\n### Index\n";
     fputs(header, output);
 
     int ex = 0;
@@ -45,7 +45,6 @@ int main(){
                 digit = 0;
             }
         }
-        int num_ex = atoi(lista1);
         if(digit){
             snprintf(linha, 200, "\n- [ex%03d](ex%03d/ex%03d.c): [%s](https://judge.beecrowd.com/pt/problems/view/%c%c%c%c)\n", ex, ex, ex, &header[14], header[14], header[15], header[16], header[17]);
         }else{
