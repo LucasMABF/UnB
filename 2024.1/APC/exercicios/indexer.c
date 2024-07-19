@@ -22,7 +22,11 @@ int main(){
         char header[100];
         fgets(header, 100, f);
         int len = strlen(header);
-        header[len - 2] = '\0';
+        if(header[len - 2] == 13){ // carriage return
+            header[len - 2] = '\0';
+        }else{
+            header[len - 1] = '\0';
+        }
 
         char lista[3] = {header[9], header[10], '\0'};
         int l = atoi(lista);
@@ -54,7 +58,7 @@ int main(){
 
         fputs(linha, output);
         fclose(f);
-        ex++;  
+        ex++;
     }
 
     fclose(output);

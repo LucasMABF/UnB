@@ -179,3 +179,29 @@
 - [ex080](ex080/ex080.c): [2782 - Escadinha](https://judge.beecrowd.com/pt/problems/view/2782)
 
 - [ex081](ex081/ex081.c): [2783 - Figurinhas da Copa](https://judge.beecrowd.com/pt/problems/view/2783)
+
+### Lista 6
+
+- [ex082](ex082/ex082.c): [1049 - Animal](https://judge.beecrowd.com/pt/problems/view/1049)
+
+- [ex083](ex083/ex083.c): [1192 - O jogo Matemático de Paula](https://judge.beecrowd.com/pt/problems/view/1192)
+
+- [ex084](ex084/ex084.c): [1235 - De Dentro para Fora](https://judge.beecrowd.com/pt/problems/view/1235)
+
+- [ex085](ex085/ex085.c): [1272 - Mensagem Oculta](https://judge.beecrowd.com/pt/problems/view/1272)
+
+- [ex086](ex086/ex086.c): [1273 - Justificador](https://judge.beecrowd.com/pt/problems/view/1273)
+
+- [ex087](ex087/ex087.c): [1581 - Conversa Internacional](https://judge.beecrowd.com/pt/problems/view/1581)
+
+- [ex088](ex088/ex088.c): [1629 - DescompactaFACE](https://judge.beecrowd.com/pt/problems/view/1629)
+
+- [ex089](ex089/ex089.c): [1848 - Corvo Contador](https://judge.beecrowd.com/pt/problems/view/1848)
+
+- [ex090](ex090/ex090.c): [2635 - Navegador Web](https://judge.beecrowd.com/pt/problems/view/2635)
+
+- [ex091](ex091/ex091.c): [2712 - Rodízio Veicular](https://judge.beecrowd.com/pt/problems/view/2712)
+
+- [ex092](ex092/ex092.c): [1551 - Frase Completa](https://judge.beecrowd.com/pt/problems/view/1551)
+
+- [ex093](ex093/ex093.c): [2253 - Validador de Senhas](https://judge.beecrowd.com/pt/problems/view/2253)
