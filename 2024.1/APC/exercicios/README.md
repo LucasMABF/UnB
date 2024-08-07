@@ -227,3 +227,19 @@
 - [ex102](ex102/ex102.c): [2520 - O Último Analógimôn](https://judge.beecrowd.com/pt/problems/view/2520)
 
 - [ex103](ex103/ex103.c): [2163 - O Despertar da Força](https://judge.beecrowd.com/pt/problems/view/2163)
+
+### Lista 8
+
+- [ex104](ex104/ex104.c): [1171 - Frequência de Números](https://judge.beecrowd.com/pt/problems/view/1171)
+
+- [ex105](ex105/ex105.c): [1251 - Diga-me a Frequência](https://judge.beecrowd.com/pt/problems/view/1251)
+
+- [ex106](ex106/ex106.c): [1255 - Frequência de Letras](https://judge.beecrowd.com/pt/problems/view/1255)
+
+- [ex107](ex107/ex107.c): [1258 - Camisetas](https://judge.beecrowd.com/pt/problems/view/1258)
+
+- [ex108](ex108/ex108.c): [2633 - Churras no Yuri](https://judge.beecrowd.com/pt/problems/view/2633)
+
+- [ex109](ex109/ex109.c): [2654 - Godofor](https://judge.beecrowd.com/pt/problems/view/2654)
+
+- [ex110](ex110/ex110.c): [2729 - Lista de Compras](https://judge.beecrowd.com/pt/problems/view/2729)
