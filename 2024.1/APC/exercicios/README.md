@@ -70,7 +70,7 @@
 
 - [ex029](ex029/ex029.c): [1061 - Tempo de um Evento](https://judge.beecrowd.com/pt/problems/view/1061)
 
-- [ex030](ex030/ex030.c): [2235 - Anando no Tempo](https://judge.beecrowd.com/pt/problems/view/2235)
+- [ex030](ex030/ex030.c): [2235 - Andando no Tempo](https://judge.beecrowd.com/pt/problems/view/2235)
 
 - [ex031](ex031/ex031.c): [2417 - Campeonato](https://judge.beecrowd.com/pt/problems/view/2417)
 
@@ -243,3 +243,21 @@
 - [ex109](ex109/ex109.c): [2654 - Godofor](https://judge.beecrowd.com/pt/problems/view/2654)
 
 - [ex110](ex110/ex110.c): [2729 - Lista de Compras](https://judge.beecrowd.com/pt/problems/view/2729)
+
+### Lista 9
+
+- [ex111](ex111/ex111.c): [1151 - Fibonacci Fácil](https://judge.beecrowd.com/pt/problems/view/1151)
+
+- [ex112](ex112/ex112.c): [1153 - Fatorial Simples](https://judge.beecrowd.com/pt/problems/view/1153)
+
+- [ex113](ex113/ex113.c): [2166 - Raiz Quadrada de 2](https://judge.beecrowd.com/pt/problems/view/2166)
+
+- [ex114](ex114/ex114.c): [2161 - Raiz Quadrada de 10](https://judge.beecrowd.com/pt/problems/view/2161)
+
+- [ex115](ex115/ex115.c): [1441 - Sequências de Granizo](https://judge.beecrowd.com/pt/problems/view/1441)
+
+- [ex116](ex116/ex116.c): [2232 - Triângulo de Pascal](https://judge.beecrowd.com/pt/problems/view/2232)
+
+- [ex117](ex117/ex117.c): [2769 - Linha de Montagem](https://judge.beecrowd.com/pt/problems/view/2769)
+
+- [ex118](ex118/ex118.c): [1028 - Figurinhas](https://judge.beecrowd.com/pt/problems/view/1028)
