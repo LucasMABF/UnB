@@ -36,7 +36,7 @@ int main(){
 
             if(new){
                 char h[26];
-                if(prova == 0){
+                if(prova == 0 || prova == 2){
                     snprintf(h, 26, "\n### Prova %d (Anulada)\n", prova);
                 }else{
                     snprintf(h, 26, "\n### Prova %d\n", prova);
