@@ -35,3 +35,13 @@
 - [ex2](prova3/ex2/ex2.c): [2157 - Sequência Espelho](https://judge.beecrowd.com/pt/problems/view/2157)
 
 - [ex3](prova3/ex3/ex3.c): [2293 - Campo de Minhocas](https://judge.beecrowd.com/pt/problems/view/2293)
+
+### Prova 4
+
+- [ex1](prova4/ex1/ex1.c): [3558 - Sobrenome Não é Fácil](https://judge.beecrowd.com/pt/problems/view/3558)
+
+- [ex2](prova4/ex2/ex2.c): [2242 - Huaauhahhuahau](https://judge.beecrowd.com/pt/problems/view/2242)
+
+- [ex3](prova4/ex3/ex3.c): [1244 - Ordenação por Tamanho](https://judge.beecrowd.com/pt/problems/view/1244)
+
+- [ex4](prova4/ex4/ex4.c): [1251 - Diga-me a Frequência](https://judge.beecrowd.com/pt/problems/view/1251)
