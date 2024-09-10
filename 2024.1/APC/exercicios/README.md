@@ -261,3 +261,7 @@
 - [ex117](ex117/ex117.c): [2769 - Linha de Montagem](https://judge.beecrowd.com/pt/problems/view/2769)
 
 - [ex118](ex118/ex118.c): [1028 - Figurinhas](https://judge.beecrowd.com/pt/problems/view/1028)
+
+### Lista 10
+
+- [ex119](ex119/ex119.c): [1244 - Ordenação por Tamanho](https://judge.beecrowd.com/pt/problems/view/1244)
