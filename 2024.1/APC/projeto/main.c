@@ -3,17 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <string.h>
 // ANSI Escape codes:
-
-// cria novo buffer de terminal
-void new_buffer(){
-  printf("\x1b[?1049h\x1b[H"); // abre buffer alternativo e posiciona cursor
-}
-
-// retorna ao buffer anterior
-void restore_buffer(){
-  printf("\x1b[?1049l");
-}
 
 // move cursor para o inicio da tela
 void top(){
@@ -30,7 +21,7 @@ void down(int n){
   printf("\x1b[%dE", n);
 }
 
-// move cursor para direita n caracteres, para o comeco da linha
+// move cursor para direita n caracteres
 void right(int n){
   printf("\x1b[%dC", n);
 }
@@ -43,7 +34,7 @@ void cleartop(){
 
 // limpa o resto da tela
 void clear_end(){
-    printf("\x1b[0J");
+  printf("\x1b[0J");
 }
 
 // limpa resto da linha
@@ -61,6 +52,17 @@ void restore_cursor_pos(){
   printf("\x1b""8");
 }
 
+// cria novo buffer de terminal
+void new_buffer(){
+  printf("\x1b[?1049h"); // abre buffer alternativo
+  top();
+}
+
+// retorna ao buffer anterior
+void restore_buffer(){
+  printf("\x1b[?1049l");
+}
+
 
 void handle_ctrlc(int sig){
   signal(SIGINT, SIG_IGN);
@@ -71,20 +73,51 @@ void handle_ctrlc(int sig){
 
 // limpa o buffer de teclado 
 // e tambem pode ser usado para esperar o ENTER
-void cleanbuffer(){
-  char c;
-  while((c = getchar() != '\n' && c != EOF));
+void clearbuffer(){
+  while(getchar() != '\n');
 }
 
-void tela_inicio(char *nickname){
+
+// pega character valido do arquivo
+char fgetvc(FILE *f){
+  char c = fgetc(f);
+  if((c < '0' || c > '9') && (c != '\n' && c != EOF)){
+    c = fgetvc(f);
+  }
+  return c;
+}
+
+
+// pega input do usuario para os menus
+int get_opc(int min, int max){
+  int opc = -1;
+  while(1){
+    save_cursor_pos();
+    printf("Digite a opcao desejada: ");
+    int lidos = scanf("%d", &opc);
+    clearbuffer();
+    if(opc >= min && opc <= max && lidos == 1) break;
+    restore_cursor_pos();
+    clear_end();
+    printf("\nOpcao invalida.");
+    up(1);
+  }
+  clear_line();
+  return opc;
+}
+
+
+void tela_inicio(char *nickname, int size){
   printf("\nBem vindo(a) ao Jogo de somas de APC!!\n\n");
 
   printf("Insira seu nickname: ");
-  scanf("%s", nickname);
+  char parser[6];
+  snprintf(parser, 6, "%%%ds", size - 1);
+  scanf(parser, nickname);
   printf("Bem vindo(a), %s!\n", nickname);
-  printf("Pressione ENTER para continuar.\n");
-  cleanbuffer();
-  cleanbuffer();
+  printf("Pressione ENTER para continuar.");
+  clearbuffer();
+  clearbuffer();
 }
 
 int menu(){
@@ -95,40 +128,20 @@ int menu(){
   printf("3 - Instrucoes\n");
   printf("4 - Ranking\n");
   printf("5 - Sair\n\n");
-  int opc = -1;
-  while(1){
-    save_cursor_pos();
-    printf("Digite a opcao desejada: ");
-    int lidos = scanf("%d", &opc);
-    cleanbuffer();
-    if(opc >= 1 && opc <= 5 && lidos == 1) break;
-    restore_cursor_pos();
-    clear_end();
-    printf("\nOpcao invalida.");
-    up(1);
-  }
-  return opc;
+  return get_opc(1, 5);
 }
 
 void inst(){
   cleartop();
-  printf("\n\n\n Instrucoes sobre o jogo das somas:\n\n");
+  printf("\n\nInstrucoes sobre o jogo das somas:\n\n");
   printf("Sera mostrado uma  matriz de numeros, e as somas que cada linha e cada coluna deveriam ter.\n");
-  printf("Eh seu trabalho falar quais numeros estao incorretos na matriz para que as somas fiquem iguais com as fornecidas.\n");
+  printf("Eh seu trabalho falar quais numeros estao incorretos na matriz para que as somas fiquem iguais as fornecidas.\n");
   printf("Voce vai informar a posicao na matriz q tem um numero que deve ser apagado. Exemplo: 1 1 para x = 1 e y = 1\n");
   printf("Voce tem 5 vidas, e seu score vai aumentando ao passo que voce acerta os desafios.\n");
   printf("No final seu score sera salvado no ranking.\n\n\n");
   printf("Boa sorte!\n\n\n");
   printf("Pressione ENTER para continuar.");
-  cleanbuffer();
-}
-
-char fgetccr(FILE *f){
-  char c = fgetc(f);
-  if(c == '\r'){
-    c = fgetc(f);
-  }
-  return c;
+  clearbuffer();
 }
 
 int jogo(FILE *f){
@@ -142,7 +155,7 @@ int jogo(FILE *f){
   int n = 0;
   char c;
 
-  while(( c = fgetccr(f)) != '\n' && c != '\r') n++; 
+  while(( c = fgetvc(f)) != '\n') n++; 
 
   fseek(f, pos_init, SEEK_SET);
 
@@ -151,12 +164,12 @@ int jogo(FILE *f){
   right(4); // posiciona cursor lugar certo
   for(int i = 0; i < n; i++){
     for(int j = 0; j < n; j++){
-      c = fgetccr(f);
+      c = fgetvc(f);
       printf(" %c ", c);
     }
     down(1);
     right(4);
-    fgetccr(f); // remove \n
+    fgetvc(f); // remove \n
   }
 
   // printa somas
@@ -171,36 +184,37 @@ int jogo(FILE *f){
   top();
   right(3);
   for(int i = 0; i < n; i++){
-    c = fgetccr(f);
-    char d = fgetccr(f);
+    c = fgetvc(f);
+    char d = fgetvc(f);
     printf(" %c%c", c, d);
   }
-  fgetccr(f); // remove \n
+  fgetvc(f); // remove \n
 
   top();
   down(2);
   for(int i = 0; i < n; i++){
-    c = fgetccr(f);
-    char d = fgetccr(f);
+    c = fgetvc(f);
+    char d = fgetvc(f);
     printf("%c%c |\n", c, d);
   }
-  fgetccr(f); // remove \n
+  fgetvc(f); // remove \n
 
+  // pega matriz expelho
   int gabarito[n][n];
   int todas_apagadas = 0;  
 
   for(int i = 0; i < n; i++){
     for(int j = 0; j < n; j++){
-      c = fgetccr(f);
+      c = fgetvc(f);
       if(c == '0') todas_apagadas++;
       gabarito[i][j] = c - '0';
     }
-    fgetccr(f); // remove \n
+    fgetvc(f); // remove \n
   }
 
-  fgetccr(f);
-  fgetccr(f); // remove * e \n
+  fgetvc(f); // remove \n
 
+  // logica principal jogo
   printf("\n*** Voce tem %d vidas ***\n", vidas);
   save_cursor_pos();
   while(1){
@@ -210,7 +224,7 @@ int jogo(FILE *f){
       clear_line();
       int lidos = scanf("%d %d", &x, &y);
       restore_cursor_pos();
-      cleanbuffer();
+      clearbuffer();
       if(lidos == 2 && x > 0 && y > 0 && x < n + 1 && y < n + 1){
         x--; // zero index
         y--;
@@ -280,7 +294,7 @@ int jogo(FILE *f){
       todas_apagadas--;
       if(todas_apagadas == 0){
         printf("\nParabens! Voce completou a fase! Pressione ENTER para ir para o menu.");
-        cleanbuffer();
+        clearbuffer();
         return 1;
       }
     }else{
@@ -292,7 +306,7 @@ int jogo(FILE *f){
       down(3);
       if(vidas == 0){
         printf("\nVoce perdeu todas suas vidas. Pressione ENTER para voltar para o menu, e tentar novamente.");
-        cleanbuffer();
+        clearbuffer();
         fseek(f, pos_init, SEEK_SET);
         return 0;
       }
@@ -300,20 +314,20 @@ int jogo(FILE *f){
 
     printf("\nPressione ENTER para continuar.");
 
-    cleanbuffer();
+    clearbuffer();
     restore_cursor_pos();
     clear_end();
   }
 }
 
-typedef enum dificuldade{
+typedef enum Dificuldade{
   Iniciante,
   Intermediario,
   Avancado
-} dificuldade;
+} Dificuldade;
 
 
-FILE *opennivel(dificuldade dif){
+FILE *opennivel(Dificuldade dif){
   if(dif == Iniciante){
     return fopen("iniciante.txt", "rb");
   }else if(dif == Intermediario){
@@ -323,61 +337,238 @@ FILE *opennivel(dificuldade dif){
   }
 }
 
+void config(FILE **f, Dificuldade *current_dif){
+  while(1){
+    cleartop();
+    printf("=== Configuracoes ===\n\n");
+    printf("1 - Zerar ranking\n");
+    printf("2 - Ajustar modo de dificuldade\n");
+    printf("3 - Voltar ao menu principal\n\n");
+    int opc = get_opc(1, 3);
+    if(opc == 1){
+      printf("Confirmar zerar o ranking? (S/N): ");
+      char c = getchar();
+      clearbuffer();
+      if(c == 's' || c == 'S'){
+        FILE *d = fopen("ranking.bin", "wb");
+        fclose(d);
+        printf("Ranking zerado.\n");
+      }else{
+        printf("Operacao cancelada.\n");
+      }
+      printf("Pressione ENTER para continuar.");
+      clearbuffer();
+    }else if(opc == 2){
+      cleartop();
+      printf("=== Escolha dificuldade ===\n\n");
+      printf("1 - Iniciante\n");
+      printf("2 - Intermediario\n");
+      printf("3 - Avancado\n");
+      printf("4 - Retornar\n\n");
+
+      int opc1 = get_opc(1, 4);
+      if(opc1 == 1){
+        *current_dif = Iniciante;
+        fclose(*f);
+        *f = opennivel(Iniciante);
+        printf("Configurado para modo Iniciante.\n");
+        printf("Pressione ENTER para continuar.");
+        clearbuffer();
+      }else if(opc1 == 2){
+        *current_dif = Intermediario;
+        fclose(*f);
+        *f = opennivel(Intermediario);
+        printf("Configurado para modo Intermediario.\n");
+        printf("Pressione ENTER para continuar.");
+        clearbuffer();
+      }else if(opc1 == 3){
+        *current_dif = Avancado;
+        fclose(*f);
+        *f = opennivel(Avancado);
+        printf("Configurado para modo Avancado.\n");
+        printf("Pressione ENTER para continuar.");
+        clearbuffer();
+      }
+    }else{
+      return;
+    }
+  }
+}
+
+typedef struct RegistroRank{
+  char nickname[21];
+  int score;
+} RegistroRank;
+
+
+void update_rank(char *nickname, Dificuldade dif){
+  int score;
+  if(dif == Iniciante) score = 50;
+  else if(dif == Intermediario) score = 100;
+  else score = 200;
+
+  // carregar ranking
+
+  FILE *frank = fopen("ranking.bin", "rb+");
+  if(frank == NULL){
+    frank = fopen("ranking.bin", "wb+");
+    if(frank == NULL){
+      printf("Erro ao abrir, ou criar, arquivo de ranking. Pressione ENTER para continuar.");
+      clearbuffer();
+
+      return;
+    }
+  }
+
+  // get size
+  fseek(frank, 0, SEEK_END);
+  int size = ftell(frank) / sizeof(RegistroRank);
+  fseek(frank, 0, SEEK_SET);
+
+  // read from file to array
+  RegistroRank ranking[size + 1];
+  int lidos = fread(ranking, sizeof(RegistroRank), size, frank);
+  if(lidos != size){
+    printf("Erro ao ler de arquivo para salvar ranking. Pressione ENTER para continuar.");
+    fclose(frank);
+    clearbuffer();
+
+    return;
+  }
+
+  // checa se nickname ja esta no ranking
+  int found = 0;
+  int idx;
+  for(int i = 0; i < size; i++){
+    if(strcmp(ranking[i].nickname, nickname) == 0){
+      found = 1;
+      idx = i;
+      ranking[i].score += score;
+      break;
+    }
+  }
+
+  if(!found){
+    strcpy(ranking[size].nickname, nickname);
+    ranking[size].score = score;
+    idx = size;
+  }
+
+  // ordena ranking
+  while(idx - 1 >= 0){
+    if(ranking[idx].score > ranking[idx - 1].score){
+      RegistroRank tmp = ranking[idx];
+      ranking[idx] = ranking[idx - 1];
+      ranking[idx - 1] = tmp;
+      idx--;
+    }else{
+      break;
+    }
+  }
+
+  fseek(frank, 0, SEEK_SET);
+  // write ranking
+  int escritos = fwrite(ranking, sizeof(RegistroRank), size + !found, frank);
+  if(escritos != size + !found){
+    printf("Erro ao escrever no arquivo para salvar ranking. Pressione ENTER para continuar.");
+    fclose(frank);
+    clearbuffer();
+
+    return;
+  }
+
+  fclose(frank);
+}
+
+void show_ranking(){
+  // carregar ranking
+  FILE *frank = fopen("ranking.bin", "rb");
+  if(frank == NULL){
+    printf("Erro ao abrir arquivo de ranking. Pressione ENTER para continuar.");
+    clearbuffer();
+
+    return;
+  }
+
+  // get size
+  fseek(frank, 0, SEEK_END);
+  int size = ftell(frank) / sizeof(RegistroRank);
+
+  fseek(frank, 0, SEEK_SET);
+
+  RegistroRank ranking[size];
+  int lidos = fread(ranking, sizeof(RegistroRank), size, frank);
+  fclose(frank);
+  if(lidos != size){
+    printf("Erro ao ler ranking. Pressione ENTER para continuar.");
+    clearbuffer();
+
+    return;
+  }
+
+  // print ranking
+  cleartop();
+  printf("      ### Ranking ###\n\n");
+  for(int i = 0; i < size; i++){
+    char tmp_buffer[22];
+    snprintf(tmp_buffer, 22, "%s:", ranking[i].nickname);
+    printf("%-21s %5d\n", tmp_buffer , ranking[i].score);
+  }
+
+  printf("\n\nPressione ENTER para voltar para o menu.");
+  clearbuffer();
+}
+
+
 int main(){
   signal(SIGINT, handle_ctrlc);
   new_buffer();
 
   char nickname[21];
-  tela_inicio(nickname);
+  tela_inicio(nickname, 21);
 
-  dificuldade nivel = Iniciante;
+  Dificuldade nivel = Iniciante;
   FILE *f = opennivel(nivel);
 
-  int erro = 0;
-  if(f == NULL){
-    printf("Erro ao abrir arquivo das fases. Pressione ENTER para sair.");
-    cleanbuffer();
-    erro = 1;
-  }
-
-  while(1 && (! erro)){
+  while(1){
+    if(f == NULL){
+      printf("Erro ao abrir arquivo das fases. Pressione ENTER para sair.");
+      clearbuffer();
+      break;
+    }
     int opc = menu();
     if(opc == 1){
       int passou = jogo(f);
       if(passou){
-        /*add to ranking*/
-        // check EOF
+        update_rank(nickname, nivel);
+
         // nivel terminado
-        if(fgetccr(f) == EOF){
+        if(fgetvc(f) == EOF){
           nivel++;
           if(nivel > Avancado){
-            printf("Parabens!! Voce zerou o jogo!\n");
+            cleartop();
+            printf("\n\n****Parabens!!****\n\nVoce zerou o jogo!\n");
             printf("\nPressione ENTER para voltar para o menu.");
-            cleanbuffer();           
+            clearbuffer();           
 
             nivel = Iniciante;
           }
           fclose(f);
           f = opennivel(nivel);
-          if(f == NULL){
-            printf("Erro ao abrir arquivo das fases. Pressione ENTER para sair.");
-            cleanbuffer();
-            erro = 1;
-          }
         }else fseek(f, -1, SEEK_CUR);
       }
     }else if(opc == 2){
-      /*config();*/
+      config(&f, &nivel);
     }else if(opc == 3){
       inst();
     }else if(opc == 4){
-      /*show_rank();*/
+      show_ranking();
     }else if(opc == 5){
+      fclose(f);
       break;
     }
   }
 
-  fclose(f);
   restore_buffer();
   printf("Tchau, %s, volte sempre!", nickname);
   return 0;
