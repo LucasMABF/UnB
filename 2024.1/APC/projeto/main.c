@@ -1,5 +1,6 @@
 // Projeto APC - Number Sums
 // Lucas Mendes de A. B. Fonseca - 241020750
+// Favor rodar em tela cheia
 #include <stdio.h>
 #include <stdlib.h>
 #include <signal.h>
@@ -220,7 +221,7 @@ int jogo(FILE *f){
   while(1){
     int x, y;
     while(1){
-      printf("Digite a linha e coluna do elemento a ser apagado: ");
+      printf("Digite a coluna e a linha do elemento a ser apagado: ");
       clear_line();
       int lidos = scanf("%d %d", &x, &y);
       restore_cursor_pos();
