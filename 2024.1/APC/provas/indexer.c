@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 
 int main(){
     FILE *output = fopen("README.md", "wb");
@@ -16,7 +14,7 @@ int main(){
         int new = 1;
         while(1){
             char nome[20]; // prova0/ex00/ex00.c
-            snprintf(nome, 20, "prova%d/ex%d/ex%d.c", prova, ex, ex);
+            snprintf(nome, 20, "prova%d/ex%d.c", prova, ex);
             FILE *f = fopen(nome, "rb");
             if(!f){
                 if(ex == 1){
@@ -47,7 +45,7 @@ int main(){
 
             char linha[200]; // [ex000](ex000/ex000.c): [1001 - Hello World!](https://judge.beecrowd.com/pt/problems/view/1001)
             char lista1[] = {header[3], header[4], header[5], header[6], '\0'};
-            snprintf(linha, 200, "\n- [ex%d](prova%d/ex%d/ex%d.c): [%s](https://judge.beecrowd.com/pt/problems/view/%c%c%c%c)\n", ex, prova, ex, ex, &header[3], header[3], header[4], header[5], header[6]);
+            snprintf(linha, 200, "\n- [ex%d](prova%d/ex%d.c): [%s](https://judge.beecrowd.com/pt/problems/view/%c%c%c%c)\n", ex, prova, ex, &header[3], header[3], header[4], header[5], header[6]);
 
             fputs(linha, output);
             fclose(f);

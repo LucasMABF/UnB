@@ -14,7 +14,7 @@ int main(){
     int current = -1;
     while(1){
         char nome[14]; // ex000/ex000.c
-        snprintf(nome, 14, "ex%03d/ex%03d.c", ex, ex);
+        snprintf(nome, 14, "ex%03d.c", ex);
         FILE *f = fopen(nome, "rb");
         if(!f){
             break;
@@ -46,12 +46,12 @@ int main(){
             }
         }
         if(digit){
-            snprintf(linha, 200, "\n- [ex%03d](ex%03d/ex%03d.c): [%s](https://judge.beecrowd.com/pt/problems/view/%c%c%c%c)\n", ex, ex, ex, &header[14], header[14], header[15], header[16], header[17]);
+            snprintf(linha, 200, "\n- [ex%03d](ex%03d.c): [%s](https://judge.beecrowd.com/pt/problems/view/%c%c%c%c)\n", ex, ex, &header[14], header[14], header[15], header[16], header[17]);
         }else{
             if(ex == 63 || ex == 64 || ex == 65){
-                snprintf(linha, 200, "\n- [ex%03d](ex%03d/ex%03d.c): [%c](ex036/funcoes_ponteiros.pdf)\n", ex, ex, ex, header[14]);
+                snprintf(linha, 200, "\n- [ex%03d](ex%03d.c): [%c](pdfs/ex063/funcoes_ponteiros.pdf)\n", ex, ex, header[14]);
             }else{
-                snprintf(linha, 200, "\n- [ex%03d](ex%03d/ex%03d.c): [%c](ex%03d/%c.pdf)\n", ex, ex, ex, header[14], ex, header[14]);
+                snprintf(linha, 200, "\n- [ex%03d](ex%03d.c): [%c](pdfs/ex%03d/%c.pdf)\n", ex, ex, header[14], ex, header[14]);
             }
         }
 
