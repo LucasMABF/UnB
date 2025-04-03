@@ -1,3 +1,7 @@
 *.exe
 *.out
 .vscode/settings.json
+build/
+bin/
+.cache
+compile_commands.json
