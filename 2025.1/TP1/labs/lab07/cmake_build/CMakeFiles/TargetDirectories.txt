@@ -1,0 +1,3 @@
+/home/lucas/Documents/UnB/unb/2025.1/TP1/labs/lab07/cmake_build/CMakeFiles/Lab07.dir
+/home/lucas/Documents/UnB/unb/2025.1/TP1/labs/lab07/cmake_build/CMakeFiles/edit_cache.dir
+/home/lucas/Documents/UnB/unb/2025.1/TP1/labs/lab07/cmake_build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/Lab06.dir/link.d CMakeFiles/Lab06.dir/src/dominios.cpp.o CMakeFiles/Lab06.dir/src/fabricas.cpp.o CMakeFiles/Lab06.dir/src/main.cpp.o -o /home/lucas/Documents/UnB/unb/2025.1/TP1/labs/lab07/bin/Lab06
