@@ -145,5 +145,5 @@ CMakeFiles/Lab07.dir/src/main.cpp.o: \
  /usr/include/c++/15.1.1/bits/basic_ios.tcc \
  /usr/include/c++/15.1.1/bits/ostream.tcc /usr/include/c++/15.1.1/istream \
  /usr/include/c++/15.1.1/bits/istream.tcc \
- /home/lucas/Documents/UnB/unb/2025.1/TP1/labs/lab07/src/fabricas.hpp \
- /home/lucas/Documents/UnB/unb/2025.1/TP1/labs/lab07/src/dominios.hpp
+ /home/lucas/Documents/UnB/unb/2025.1/TP1/labs/lab07/src/dominios.hpp \
+ /home/lucas/Documents/UnB/unb/2025.1/TP1/labs/lab07/src/fabricas.hpp

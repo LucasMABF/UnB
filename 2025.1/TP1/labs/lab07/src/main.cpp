@@ -30,5 +30,8 @@ int main() {
     cout << "B = " << dominio_b->getValor() << endl;
   }
 
+  delete dominio_a;
+  delete dominio_b;
+  delete fabrica;
   return 0;
 }

@@ -5,3 +5,4 @@ build/
 bin/
 .cache
 compile_commands.json
+.clang-format

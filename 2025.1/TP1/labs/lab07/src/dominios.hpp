@@ -9,6 +9,7 @@ class Dominio {
  public:
   bool setValor(int);
   int getValor() const;
+  virtual ~Dominio() = default;
 };
 
 inline int Dominio::getValor() const { return this->valor; }

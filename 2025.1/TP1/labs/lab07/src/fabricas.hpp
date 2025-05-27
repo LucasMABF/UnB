@@ -7,6 +7,7 @@ class FabricaDominio {
  public:
   virtual Dominio *instanciarDominioA() const = 0;
   virtual Dominio *instanciarDominioB() const = 0;
+  virtual ~FabricaDominio() = default;
 };
 
 class FabricaDominio1 : public FabricaDominio {
