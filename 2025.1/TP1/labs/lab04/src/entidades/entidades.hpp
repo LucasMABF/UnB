@@ -1,7 +1,7 @@
 #ifndef ENTIDADES_HPP_INCLUDED
 #define ENTIDADES_HPP_INCLUDED
 
-#include "../dominios/dominios.hpp"
+#include "dominios/dominios.hpp"
 
 class Projeto {
   private:

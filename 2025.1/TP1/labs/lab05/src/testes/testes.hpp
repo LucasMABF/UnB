@@ -1,7 +1,7 @@
 #ifndef TESTES_HPP_INCLUDED
 #define TESTES_HPP_INCLUDED
 
-#include "../dominios/dominios.hpp"
+#include "dominios/dominios.hpp"
 
 class StubDominio: public Dominio {
   private:

@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "dominios.hpp"
-#include "fabricas.hpp"
+#include "dominios/dominios.hpp"
+#include "fabricas/fabricas.hpp"
 
 using namespace std;
 

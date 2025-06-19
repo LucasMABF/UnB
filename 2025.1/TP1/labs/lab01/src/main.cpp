@@ -1,5 +1,5 @@
 #include <iostream>
-#include "dominios.hpp"
+#include "dominios/dominios.hpp"
 
 using std::cout, std::endl;
 

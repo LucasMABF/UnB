@@ -7,9 +7,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-include_directories(include)
+include_directories("src")
 
-file(GLOB SOURCES "src/*.cpp")
+file(GLOB_RECURSE SOURCES "src/*.cpp")
 
 add_executable(Lab01 ${SOURCES})
 

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(Lab04)
+project(Lab08)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ./../bin)
 
@@ -11,5 +11,5 @@ include_directories("src")
 
 file(GLOB_RECURSE SOURCES "src/*.cpp")
 
-add_executable(Lab04 ${SOURCES})
+add_executable(Lab08 ${SOURCES})
 
