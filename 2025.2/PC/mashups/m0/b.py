@@ -1,3 +1,5 @@
+# Azuleijos
+# https://codeforces.com/group/YPSel1QSwP/contest/630230/problem/B
 import math
 
 n, m = map(int, input().split())

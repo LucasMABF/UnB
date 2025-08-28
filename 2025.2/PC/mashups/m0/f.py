@@ -1,3 +1,5 @@
+# Prefix-Suffix Palindrome (Easy version)
+# https://codeforces.com/group/YPSel1QSwP/contest/630230/problem/F
 def palin(word):
     n = len(word) - 1
     for i, c in enumerate(word):

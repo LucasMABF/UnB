@@ -1,3 +1,5 @@
+# Next Round
+# https://codeforces.com/group/YPSel1QSwP/contest/630230/problem/E
 n, k = input().split()
 k = int(k)
 scores = input().split()

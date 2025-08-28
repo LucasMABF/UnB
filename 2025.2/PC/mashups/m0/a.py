@@ -1,3 +1,5 @@
+# Append and Panic!
+# https://codeforces.com/group/YPSel1QSwP/contest/630230/problem/A
 line = input()
 chars = 0
 

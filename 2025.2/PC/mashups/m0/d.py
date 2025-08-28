@@ -1,3 +1,5 @@
+# Maratona no LINF
+# https://codeforces.com/group/YPSel1QSwP/contest/630230/problem/D
 n, c = input().split()
 c = int(c)
 
