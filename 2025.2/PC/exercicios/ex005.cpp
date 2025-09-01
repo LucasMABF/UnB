@@ -1,5 +1,5 @@
 // Nastya and an Array
-// https://codeforces.com/contest/992/problem/A
+//https://codeforces.com/problemset/problem/992/a
 #include <bits/stdc++.h>
 
 using namespace std;
