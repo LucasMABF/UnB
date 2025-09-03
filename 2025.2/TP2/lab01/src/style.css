@@ -1,0 +1,47 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #c0caf5;
+  background-color: #1a1b26;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --accent: #7aa2f7;
+  --accent-hover: #89b4f8;
+  --bg-dark: #1a1b26;
+  --bg-light: #24283b;
+}
+
+a {
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-dark);
+  color: #c0caf5;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: var(--accent);
+}
+
+#app {
+  margin: 0;
+  padding-bottom: 1rem;
+}
